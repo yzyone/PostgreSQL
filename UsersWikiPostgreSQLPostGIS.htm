@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+
+  <head>
+    <title>
+      UsersWikiPostgreSQLPostGIS – PostGIS
+    </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if IE]><script type="text/javascript">
+      if (/^#__msie303:/.test(window.location.hash))
+        window.location.replace(window.location.hash.replace(/^#__msie303:/, '#'));
+    </script><![endif]-->
+          <link rel="search" href="/postgis/search" />
+          <link rel="help" href="/postgis/wiki/TracGuide" />
+          <link rel="alternate" href="/postgis/wiki/UsersWikiPostgreSQLPostGIS?format=txt" type="text/x-trac-wiki" title="纯文本" />
+          <link rel="start" href="/postgis/wiki" />
+          <link rel="stylesheet" href="/postgis/chrome/common/css/trac.css" type="text/css" />
+          <link rel="stylesheet" href="/postgis/chrome/common/css/wiki.css" type="text/css" />
+          <link rel="icon" href="/postgis/chrome/common/trac.ico" type="image/x-icon" />
+    <style id="trac-noscript" type="text/css">.trac-noscript { display: none !important }</style>
+      <link type="application/opensearchdescription+xml" rel="search" href="/postgis/search/opensearch" title="搜索 PostGIS" />
+      <script type="text/javascript" charset="utf-8" src="/postgis/chrome/common/js/jquery.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/postgis/chrome/common/js/babel.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/postgis/chrome/common/js/messages/zh_CN.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/postgis/chrome/common/js/trac.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/postgis/chrome/common/js/search.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/postgis/chrome/common/js/folding.js"></script>
+    <script type="text/javascript">
+      jQuery("#trac-noscript").remove();
+      jQuery(document).ready(function($) {
+        $(".trac-autofocus").focus();
+        $(".trac-target-new").attr("target", "_blank");
+        if ($.ui) { /* is jquery-ui added? */
+          $(".trac-datepicker:not([readonly])").prop("autocomplete", "off").datepicker();
+          $(".trac-datetimepicker:not([readonly])").prop("autocomplete", "off").datetimepicker();
+          $("#main").addClass("trac-nodatetimehint");
+        }
+        $(".trac-disable").disableSubmit(".trac-disable-determinant");
+        setTimeout(function() { $(".trac-scroll").scrollToTop() }, 1);
+        $(".trac-disable-on-submit").disableOnSubmit();
+      });
+    </script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("h1,h2,h3,h4,h5,h6").addAnchor(_("Link to this section"));
+        $("#content").find(".wikianchor").each(function() {
+          $(this).addAnchor(babel.format(_("Link to #%(id)s"), {id: $(this).attr('id')}));
+        });
+        $(".foldable").enableFolding(true, true);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="http://trac.osgeo.org/postgis/"><img src="/postgis/chrome/site/trac_logo.png" alt="" /></a>
+      </div>
+      <form id="search" action="/postgis/search" method="get">
+        <div>
+          <label for="proj-search">搜索:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="搜索" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="/postgis/login">登录</a></li><li><a href="/postgis/wiki/TracGuide">帮助/指南</a></li><li><a href="/postgis/about">关于Trac</a></li><li class="last"><a href="/postgis/prefs">个人设置</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first active"><a href="/postgis/wiki">Wiki</a></li><li><a href="/postgis/timeline">时间线</a></li><li><a href="/postgis/roadmap">路线图</a></li><li><a href="/postgis/browser">源码浏览</a></li><li><a href="/postgis/report">查看任务单</a></li><li class="last"><a href="/postgis/search">搜索</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="pagepath" class="noprint">
+  <a class="pathentry first" title="查看 WikiStart" href="/postgis/wiki">wiki</a><a class="pathentry" href="/postgis/wiki/UsersWikiPostgreSQLPostGIS" title="查看 UsersWikiPostgreSQLPostGIS">UsersWikiPostgreSQLPostGIS</a>
+</div>
+      <div id="ctxtnav" class="nav">
+        <h2>上下文导航</h2>
+        <ul>
+          <li class="first"><a href="/postgis/wiki/WikiStart">起始页</a></li><li><a href="/postgis/wiki/TitleIndex">索引</a></li><li class="last"><a href="/postgis/wiki/UsersWikiPostgreSQLPostGIS?action=history">历史</a></li>
+        </ul>
+        <hr />
+      </div>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable">
+        
+          <div id="wikipage" class="trac-content"><h1 id="Currentbest">Current best</h1>
+<p>
+As of 03 July 2019, these versions are latest and give you best stable feature coverage. 
+</p>
+<ul><li>PostGIS 3.0.1 <a style="padding:0; border:none" href="https://repology.org/badge/latest-versions/postgis.svg"><img src="https://repology.org/badge/latest-versions/postgis.svg" alt="https://repology.org/badge/latest-versions/postgis.svg" title="https://repology.org/badge/latest-versions/postgis.svg" /></a>
+</li><li>PostgreSQL 12.3 <a style="padding:0; border:none" href="https://repology.org/badge/latest-versions/postgresql.svg"><img src="https://repology.org/badge/latest-versions/postgresql.svg" alt="https://repology.org/badge/latest-versions/postgresql.svg" title="https://repology.org/badge/latest-versions/postgresql.svg" /></a>
+</li><li>GEOS 3.8.1 <a style="padding:0; border:none" href="https://repology.org/badge/latest-versions/geos.svg"><img src="https://repology.org/badge/latest-versions/geos.svg" alt="https://repology.org/badge/latest-versions/geos.svg" title="https://repology.org/badge/latest-versions/geos.svg" /></a> <a class="ext-link" href="https://github.com/libgeos/geos/blob/main/NEWS"><span class="icon">​</span>https://github.com/libgeos/geos/blob/main/NEWS</a>
+</li><li>SFCGAL 1.3.8 <a style="padding:0; border:none" href="https://repology.org/badge/latest-versions/sfcgal.svg"><img src="https://repology.org/badge/latest-versions/sfcgal.svg" alt="https://repology.org/badge/latest-versions/sfcgal.svg" title="https://repology.org/badge/latest-versions/sfcgal.svg" /></a> <a class="ext-link" href="https://gitlab.com/Oslandia/SFCGAL/-/releases"><span class="icon">​</span>https://gitlab.com/Oslandia/SFCGAL/-/releases</a>
+</li><li>GDAL 3.1.1 <a style="padding:0; border:none" href="https://repology.org/badge/latest-versions/gdal.svg"><img src="https://repology.org/badge/latest-versions/gdal.svg" alt="https://repology.org/badge/latest-versions/gdal.svg" title="https://repology.org/badge/latest-versions/gdal.svg" /></a> <a class="ext-link" href="https://github.com/OSGeo/gdal/releases"><span class="icon">​</span>https://github.com/OSGeo/gdal/releases</a>
+</li><li>PROJ 6.2.1 <a style="padding:0; border:none" href="https://repology.org/badge/latest-versions/proj.svg"><img src="https://repology.org/badge/latest-versions/proj.svg" alt="https://repology.org/badge/latest-versions/proj.svg" title="https://repology.org/badge/latest-versions/proj.svg" /></a> <a class="ext-link" href="https://github.com/OSGeo/PROJ/releases"><span class="icon">​</span>https://github.com/OSGeo/PROJ/releases</a>
+</li><li>protobuf-c 1.3.3 <a style="padding:0; border:none" href="https://repology.org/badge/latest-versions/protobuf-c.svg"><img src="https://repology.org/badge/latest-versions/protobuf-c.svg" alt="https://repology.org/badge/latest-versions/protobuf-c.svg" title="https://repology.org/badge/latest-versions/protobuf-c.svg" /></a> <a class="ext-link" href="https://github.com/protobuf-c/protobuf-c/releases"><span class="icon">​</span>https://github.com/protobuf-c/protobuf-c/releases</a>
+</li><li>json-c 0.14 <a style="padding:0; border:none" href="https://repology.org/badge/latest-versions/json-c.svg"><img src="https://repology.org/badge/latest-versions/json-c.svg" alt="https://repology.org/badge/latest-versions/json-c.svg" title="https://repology.org/badge/latest-versions/json-c.svg" /></a> <a class="ext-link" href="https://github.com/json-c/json-c"><span class="icon">​</span>https://github.com/json-c/json-c</a>
+</li></ul><h1 id="PostGISSupportMatrix">PostGIS Support Matrix</h1>
+<p>
+<strong>Versions of PostgreSQL supported by which versions of PostGIS</strong>
+</p>
+<table class="wiki">
+<tr><td><strong>PostgreSQL version</strong></td><td><strong>PostGIS 1.3 EOL</strong></td><td><strong>PostGIS 1.4 EOL</strong></td><td><strong>PostGIS 1.5 EOL</strong></td><td><strong>PostGIS 2.0 EOL</strong></td><td style="text-align: left"><strong>PostGIS 2.1 EOL</strong> </td><td style="text-align: left"><strong>PostGIS 2.2 EOL </strong> </td><td><strong>PostGIS 2.3 EOL </strong></td><td><strong>PostGIS 2.4</strong></td><td><strong>PostGIS 2.5</strong></td><td><strong>PostGIS 3.0</strong></td><td style="text-align: left"><strong>PostGIS 3.1
+</td></tr><tr><td>PostGIS release date</td><td style="text-align: right"> 2007/08/09</td><td style="text-align: right"> 2009/07/24</td><td style="text-align: right"> 2010/02/04</td><td style="text-align: right"> 2012/04/03</td><td style="text-align: right"> 2013/08/17</td><td style="text-align: right"> 2015/10/07</td><td style="text-align: right"> 2016/09/26</td><td style="text-align: right"> 2017/09/30</td><td style="text-align: right"> 2018/09/23</td><td style="text-align: right"> 2019/10/20</td><td> 2020/XX/XX
+</td></tr><tr><td></strong>13<strong></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td>No</td><td>No</td><td></strong>Yes*<strong></td><td style="text-align: left"></strong>Yes*<strong>
+</td></tr><tr><td></strong>12<strong></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td>No</td><td></strong>Yes<strong></td><td></strong>Yes<strong></td><td style="text-align: left"></strong>Yes<strong>
+</td></tr><tr><td></strong>11<strong></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td>Yes*</td><td></strong>Yes<strong></td><td></strong>Yes<strong></td><td style="text-align: left"></strong>Yes<strong>
+</td></tr><tr><td></strong>10<strong></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">Yes (not recommended)</span></td><td></strong>Yes<strong></td><td></strong>Yes<strong></td><td></strong>Yes<strong></td><td style="text-align: left"></strong>Yes<strong>
+</td></tr><tr><td></strong>9.6<strong></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">Yes (not recommended)</span></td><td><span style="color: grey">Yes</span></td><td></strong>Yes<strong></td><td></strong>Yes<strong></td><td></strong>Yes<strong></td><td style="text-align: left"></strong>Yes<strong>
+</td></tr><tr><td></strong>9.5<strong></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">Yes</span></td><td></strong>Yes<strong></td><td></strong>Yes<strong></td><td></strong>Yes<strong></td><td style="text-align: left">No
+</td></tr><tr><td></strong><span style="color: grey">9.4 EOL</span><strong></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">No</span></td><td style="text-align: left"><span style="color: grey">No</span>
+</td></tr><tr><td></strong><span style="color: grey">9.3 EOL</span><strong></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td style="text-align: left"><span style="color: grey">No</span>
+</td></tr><tr><td></strong><span style="color: grey">9.2 EOL</span><strong></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">Yes (not recommended)</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td style="text-align: left"><span style="color: grey">No</span>
+</td></tr><tr><td></strong><span style="color: grey">9.1 EOL</span><strong></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td style="text-align: left"><span style="color: grey">No</span>
+</td></tr><tr><td></strong><span style="color: grey">9.0 EOL</span><strong></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">Yes (not recommended)</span></td><td><span style="color: grey">Yes (not recommended)</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td style="text-align: left"><span style="color: grey">No</span>
+</td></tr><tr><td></strong><span style="color: grey">8.4 EOL</span><strong></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">Yes (not recommended)</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td style="text-align: left"><span style="color: grey">No</span>
+</td></tr><tr><td></strong><span style="color: grey">8.3 EOL</span><strong></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td style="text-align: left"><span style="color: grey">No</span>
+</td></tr><tr><td></strong><span style="color: grey">8.2 EOL</span><strong></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td style="text-align: left"><span style="color: grey">No</span>
+</td></tr><tr><td></strong><span style="color: grey">8.1 EOL</span><strong></td><td><span style="color: grey">Yes</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td style="text-align: left"><span style="color: grey">No</span>
+</td></tr><tr><td></strong><span style="color: grey">8.0 EOL</span><strong></td><td><span style="color: grey">Yes (not windows)</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td style="text-align: left"><span style="color: grey">No</span>
+</td></tr><tr><td></strong><span style="color: grey">7.2-7.4 EOL</span><strong></td><td><span style="color: grey">Yes (not windows)</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td style="text-align: left"><span style="color: grey">No</span>
+</td></tr></table>
+</strong><p>
+Versions of PostGIS labeled 'EOL' will no longer receive any micro updates or security patches. If you are running these you should upgrade to the latest version you can.
+</p>
+<p>
+The <em>not recommended</em> note means you can compile and install with that, but you'll be missing some functionality.
+</p>
+<p>
+<sup>*</sup> Means it currently does or doesn't but may change at release time.
+</p>
+<p>
+If you are compiling PostGIS 2.0+ with anything less than 9.1,
+you will not get CREATE EXTENSION support and will also not get KNN gist distance for geometry.
+</p>
+<p>
+As a general rule, the PostGIS Project Steering committee  tries to maintain support of PostGIS for at least two versions of PostgreSQL.
+We most often support more than 2 PostgreSQL versions, if requirements do not necessitate bumping up requirement without too much effort.
+We will rarely support more than 5 PostgreSQL versions on any release.
+</p>
+<p>
+64-bit Windows version support started in PostGIS 2.0.0 (both 9.0 and 9.1)
+</p>
+<p>
+<strong>Versions of GEOS support for PostGIS</strong>
+</p>
+<p>
+The below chart shows which versions of GEOS work with which versions of PostGIS.
+The none means that you can get that version to work without GEOS, though its not recommended since a lot of functions will not be installed.  
+</p>
+<p>
+For the not recommended, this means that while you can get PostGIS to work with those versions, you'll be missing out on some PostGIS functions such as ST_Covers, ST_CoversBy and for PostGIS 1.5 the ST_HausdorffDistance and enhancements to ST_Buffer (both speed and functionality). 
+</p>
+<p>
+GEOS 3.1 brought cascade union. 
+</p>
+<p>
+GEOS 3.2 brought faster buffering and buffering enhancements, plus numerous enhancements with dealing with tolerance issues when unioning.
+</p>
+<p>
+GEOS 3.3 brought ST_ValidReason, ST_MakeValid etc (in the PostGIS 2.0 releases), so these functions will be disabled in PostGIS 2.0 if you are not running GEOS 3.3. GEOS 3.3. also brought stability fixes for union/buffer not back-ported to 3.2.  For PostGIS 1.5, although 3.3 does not add any additional functions, it does fix some crashers involving buffering and unioning not present in other minor releases, so suggested to use that if you can.
+</p>
+<p>
+GEOS 3.4 introduced interruptibility features that allow you to cancel a query while in a GEOS loops.  Prior versions of PostGIS/GEOS a query could run (even with statement timeout) until you ran out of memory. This new feature requires both PostGIS 2.1+ and GEOS 3.4+.  3.4 also brought <a class="ext-link" href="http://postgis.net/docs/manual-2.1/ST_DelaunayTriangles.html"><span class="icon">​</span>ST_DelaunayTriangles</a> so you won't get that in 2.1 if you don't compile for 3.4+.
+</p>
+<p>
+GEOS 3.5 brought some enhancements needed new features in PostGIS 2.2 <a class="ext-link" href="http://postgis.net/docs/manual-2.2/ST_Subdivide.html"><span class="icon">​</span>ST_Subdivide</a> and <a class="ext-link" href="http://postgis.net/docs/manual-2.2/ST_ClipByBox2D.html"><span class="icon">​</span>ST_ClipByBox2D</a>.
+GEOS 3.5 also brought ST_Voronoi so if compiled with lower than 3.5, the ST_Voronoi introduced in PostGIS 2.3 won't be available <a class="ext-link" href="http://postgis.net/docs/manual-2.3/ST_VoronoiLines.html"><span class="icon">​</span>ST_VoronoiLines and ST_VoronoiPolygons</a>.
+</p>
+<p>
+GEOS 3.6.0 came out after 2.3.0 release, so most 2.3 distros will not have enabled - <a class="ext-link" href="http://postgis.net/docs/manual-2.3/ST_MinimumClearance.html"><span class="icon">​</span>ST_MinimumClearance*</a> that require 3.6, but may in 2.3.1
+</p>
+<table class="wiki">
+<tr><td><strong>Geos Version</strong></td><td><strong>PostGIS 1.3 EOL</strong></td><td><strong>PostGIS 1.4 EOL</strong></td><td><strong>PostGIS 1.5 EOL</strong></td><td><strong>PostGIS 2.0 EOL</strong></td><td><strong>PostGIS 2.1 EOL</strong></td><td><strong>PostGIS 2.2 EOL</strong></td><td><strong>PostGIS 2.3</strong></td><td><strong>PostGIS 2.4</strong></td><td style="text-align: left"><strong>PostGIS 2.5</strong>
+</td></tr><tr><td><strong>3.8*</strong></td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td><strong>Yes</strong></td><td><strong>Yes</strong></td><td><strong>Yes</strong></td><td style="text-align: left"><strong>Yes</strong>
+</td></tr><tr><td><strong>3.7</strong></td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td><strong>Yes</strong></td><td><strong>Yes</strong></td><td><strong>Yes</strong></td><td style="text-align: left"><strong>Yes</strong>
+</td></tr><tr><td><strong>3.6</strong></td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td><strong>Yes</strong></td><td><strong>Yes</strong> (recommended)</td><td>Yes*</td><td style="text-align: left">Yes*
+</td></tr><tr><td><strong>3.5</strong></td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td><strong>Yes</strong> (recommended)</td><td>Yes*</td><td>Yes*</td><td style="text-align: left">Yes*
+</td></tr><tr><td><strong>3.4</strong></td><td>Yes</td><td>Yes</td><td>Yes (preferred 3.4.2+)</td><td>Yes (3.4.2+)</td><td>Yes</td><td>Yes*</td><td>Yes*</td><td>Yes*</td><td style="text-align: left">No
+</td></tr><tr><td><strong>3.3 EOL</strong></td><td>Yes</td><td>Yes</td><td>Yes (preferred 3.3.3+)</td><td>Yes (3.3.9+)</td><td>Yes (not recommended)</td><td>Yes*</td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td style="text-align: left">No
+</td></tr><tr><td><strong>3.2 EOL</strong></td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes (not recommended)</td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td style="text-align: left">No
+</td></tr><tr><td><strong>3.1 EOL</strong></td><td>Yes</td><td>Yes</td><td>Yes (not recommended) (requires 3.1.1+)</td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td style="text-align: left">No
+</td></tr><tr><td><strong>3.0 EOL</strong></td><td>Yes</td><td>Yes (not recommended)</td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td style="text-align: left">No
+</td></tr><tr><td><strong>2.2 EOL</strong></td><td>Yes (not recommended)</td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td style="text-align: left">No
+</td></tr><tr><td><strong>None</strong></td><td>Yes (not recommended)</td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td style="text-align: left">No
+</td></tr></table>
+<p>
+<strong>Versions of GDAL support for PostGIS</strong>
+</p>
+<p>
+PostGIS raster functionality (introduced in 2.0) depends on GDAL so to get raster functionality, you'll need to compile with GDAL support and preferably 1.9 or above.
+Although you can compile PostGIS 2.0 without raster support, you really should rethink that decision, especially if you are a package maintainer (you'll have a lot of pissed off users if you do :)).
+For PostgreSQL 9.1 extension support, compiling with raster support is ABSOLUTELY required since the postgis extension includes the raster functionality. 
+</p>
+<ul><li>Means it currently does or doesn't but may change at release time.
+</li></ul><table class="wiki">
+<tr><td><strong>GDAL Version</strong></td><td><strong>Pre - PostGIS 2.0</strong></td><td><strong>PostGIS 2.0</strong></td><td><strong>PostGIS 2.1</strong></td><td><strong>PostGIS 2.2</strong></td><td><strong>PostGIS 2.3</strong></td><td style="text-align: left"><strong>PostGIS 2.4</strong>
+</td></tr><tr><td><strong>2.2</strong></td><td>N/A</td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td>Yes</td><td>Yes</td><td style="text-align: left">Yes
+</td></tr><tr><td><strong>2.1</strong></td><td>N/A</td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td>Yes</td><td>Yes</td><td style="text-align: left">Yes
+</td></tr><tr><td><strong>2.0</strong></td><td>N/A</td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td>Yes</td><td>Yes</td><td style="text-align: left">Yes
+</td></tr><tr><td><strong>1.11</strong></td><td>N/A</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td style="text-align: left">Yes
+</td></tr><tr><td><strong>1.10</strong></td><td>N/A</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td style="text-align: left">Yes
+</td></tr><tr><td><strong>1.9</strong></td><td>N/A</td><td>Yes</td><td>Yes</td><td>Yes</td><td style="text-align: left">Yes
+</td></tr><tr><td><strong>1.8</strong></td><td>N/A</td><td>Yes (not recommended)</td><td>Yes (not recommended)</td><td>Yes*</td><td style="text-align: left">Yes*
+</td></tr><tr><td><strong>1.7</strong></td><td>N/A</td><td>Yes (not recommended)</td><td><span style="color: grey">No</span></td><td><span style="color: grey">No</span></td><td style="text-align: left">No
+</td></tr></table>
+<h1 id="Packagingstatus">Packaging status</h1>
+<p>
+See <a class="wiki" href="/postgis/wiki/UsersWikiPackages">UsersWikiPackages</a>
+</p>
+</div>
+          
+          <div class="trac-modifiedby">
+            <span><a href="/postgis/wiki/UsersWikiPostgreSQLPostGIS?action=diff&amp;version=184" title="由 strk 编辑的 184: Drop references to deprecated master branches">Last modified</a> <a class="timeline" href="/postgis/timeline?from=2021-07-06T06%3A56%3A53-07%3A00&amp;precision=second" title="See timeline at 2021年7月6日 上午6:56:53">7周 ago</a></span>
+            <span class="trac-print">Last modified on 2021年7月6日 上午6:56:53</span>
+          </div>
+        
+        
+      </div>
+      
+
+    </div>
+    <div id="altlinks">
+      <h3>用其他格式下载:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="/postgis/wiki/UsersWikiPostgreSQLPostGIS?format=txt">纯文本</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="/postgis/chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">由 <a href="http://www.edgewall.org/">Edgewall Software</a> 的 <a href="/postgis/about"><strong>Trac 1.2.2</strong></a><br />
+        提供动力</p>
+      <p class="right">请访问Trac开源项目<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>
