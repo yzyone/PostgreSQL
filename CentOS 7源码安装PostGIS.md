@@ -16,6 +16,7 @@ Postgresql数据库安装全目录
 
 二 编译GEOS
 
+```
 [root@VM_0_4_centos ~]# cd /opt
 [root@VM_0_4_centos opt]# wget https://download.osgeo.org/geos/geos-3.7.0.tar.bz2
 [root@VM_0_4_centos opt]# tar -jxvf geos-3.7.0.tar.bz2 
@@ -23,7 +24,8 @@ Postgresql数据库安装全目录
 [root@VM_0_4_centos geos-3.7.0]# ./configure --prefix=/usr/local/geos-3.7.0
 [root@VM_0_4_centos geos-3.7.0]# make
 [root@VM_0_4_centos geos-3.7.0]# make install   
- 
+```
+
 如果有以下问题：
 
 问题1：
